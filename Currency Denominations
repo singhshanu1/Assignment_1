@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int amount, notes100, notes50, notes10;
+
+    printf("Enter amount: ");
+    scanf("%d", &amount);
+
+    notes100 = amount / 100;
+    amount = amount % 100;
+
+    notes50 = amount / 50;
+    amount = amount % 50;
+
+    notes10 = amount / 10;
+
+    printf("100 notes = %d\n", notes100);
+    printf("50 notes = %d\n", notes50);
+    printf("10 notes = %d", notes10);
+
+    return 0;
+}
