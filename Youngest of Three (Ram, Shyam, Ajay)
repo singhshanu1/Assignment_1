@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int ram, shyam, ajay;
+
+    printf("Enter ages of Ram, Shyam, Ajay: ");
+    scanf("%d %d %d", &ram, &shyam, &ajay);
+
+    if (ram < shyam && ram < ajay) {
+        printf("Youngest: R, Age = %d", ram);
+    }
+    else if (shyam < ram && shyam < ajay) {
+        printf("Youngest: S, Age = %d", shyam);
+    }
+    else {
+        printf("Youngest: A, Age = %d", ajay);
+    }
+
+    return 0;
+}
