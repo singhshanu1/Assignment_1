@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int real1, imag1, real2, imag2;
+    int real_sum, imag_sum;
+
+    printf("Enter real and imaginary part of first number: ");
+    scanf("%d %d", &real1, &imag1);
+
+    printf("Enter real and imaginary part of second number: ");
+    scanf("%d %d", &real2, &imag2);
+
+    real_sum = real1 + real2;
+    imag_sum = imag1 + imag2;
+
+    printf("Sum = %d + %di", real_sum, imag_sum);
+
+    return 0;
+}
