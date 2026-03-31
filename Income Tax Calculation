@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main() {
+    char name, status;
+    float gross, taxable, tax = 0;
+    int children;
+
+    printf("Enter First Letter of Name: ");
+    scanf(" %c", &name);
+
+    printf("Enter Status (S for Single, M for Married): ");
+    scanf(" %c", &status);
+
+    printf("Enter Gross Income: ");
+    scanf("%f", &gross);
+
+    printf("Enter Number of Children: ");
+    scanf("%d", &children);
+
+    float personal_allowance, child_allowance;
+
+    if (status == 'S' || status == 's') {
+        personal_allowance = 3600;
+    } else {
+        personal_allowance = 6000;
+    }
+
+    child_allowance = children * 1200;
+
+    taxable = gross - (personal_allowance + child_allowance);
+
+    if (taxable <= 10000) {
+        tax = 0;
+    } 
+    else if (taxable <= 20000) {
+        tax = (taxable - 10000) * 0.20;
+    } 
+    else if (taxable <= 40000) {
+        tax = (10000 * 0.20) + (taxable - 20000) * 0.30;
+    } 
+    else {
+        tax = (10000 * 0.20) + (20000 * 0.30) + (taxable - 40000) * 0.40;
+    }
+
+    printf("\n--- Details ---\n");
+    printf("Name: %c\n", name);
+    printf("Status: %c\n", status);
+    printf("Gross Income: %.2f\n", gross);
+    printf("Taxable Income: %.2f\n", taxable);
+    printf("Income Tax: %.2f\n", tax);
+
+    return 0;
+}
