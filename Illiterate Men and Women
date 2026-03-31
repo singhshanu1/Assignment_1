@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int population = 80000;
+    float men_percent = 52, literacy_percent = 48, literate_men_percent = 35;
+
+    int men = (population * men_percent) / 100;
+    int women = population - men;
+
+    int literate_people = (population * literacy_percent) / 100;
+    int literate_men = (population * literate_men_percent) / 100;
+
+    int literate_women = literate_people - literate_men;
+
+    int illiterate_men = men - literate_men;
+    int illiterate_women = women - literate_women;
+
+    printf("Illiterate Men = %d\n", illiterate_men);
+    printf("Illiterate Women = %d", illiterate_women);
+
+    return 0;
+}
